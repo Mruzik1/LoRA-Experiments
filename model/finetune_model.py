@@ -28,7 +28,6 @@ def load_dataset_from_json(file_path):
             prompt = f"<s>[INST] {record['original_content']} [/INST]"
             completion = f"{record['reply_content']} </s>"
             data.append({"prompt": prompt, "completion": completion})
-            print(data)
     return Dataset.from_list(data)
 
 dataset = load_dataset_from_json(DATA_FILE)
